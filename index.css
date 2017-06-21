@@ -1,0 +1,158 @@
+img
+{
+    position:absolute;
+    left:130px;
+    top:70px;
+	z-index:-1;
+}
+
+h1
+{
+	color:#F58F9C;
+	font-family: "Bernard MT condensed", times, courier, monospace;
+	margin-bottom: 0;
+	font-size:30pt;
+	text-shadow: 2px 2px #70362B;
+}
+
+h2
+{
+	color:#F58F9C;
+	font-family: "Bernard MT condensed", times, courier, monospace;
+	margin-bottom: 0;
+	font-size:28pt;
+	text-shadow: 1px 1px #70362B;
+}
+
+input
+{
+	color:#58211E;
+}
+
+body
+{
+	color:#58211E;
+}
+
+pre 
+{
+	font-family: "times new roman", courier, monospace;
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+a:link {
+	text-decoration:none;
+	color:#58211E;
+}
+
+a:visited {
+	text-decoration:none;
+	color:#58211E;
+}
+
+a:hover {
+	text-decoration:underline;
+	color:#F58F9C;
+}
+
+a:active {
+	text-decoration:underline;
+	color:#E996C3;
+}
+
+#specialkost
+{
+	display:inline;
+	color:#ffffff;
+	font-weight:bold;
+	background-color:#87CEEB;
+	border-style:dashed;
+	border-width:1px;
+	border-color:black;
+}
+
+#kategori
+{
+	display:inline;
+	color:#ffffff;
+	font-weight:bold;
+	background-color:#87CEEB;
+	border-style:dashed;
+	border-width:1px;
+	border-color:black;
+	margin-right: 5px;
+}
+
+#tidsatgang
+{
+	display:inline;
+	margin: 0;
+}
+
+#beskrivning
+{
+	font-style:italic;
+	font-size:14pt;
+}
+
+#receptlista_titel
+{
+	margin-bottom=50;
+}
+
+#beskrivningmobil
+{
+	table-layout:fixed;
+	width: 100%;
+}
+
+#knapparmobil
+{
+
+}
+
+#receptlista_titel_mobil
+{
+	text-shadow: 2px 2px #ffffff;
+	font: bold 45px;
+	margin-bottom: 15px;
+}
+
+#listamobil
+{
+    font: bold 20 Arial;
+    text-decoration: none;
+    background-color: #F58F9C;
+    color: #ffffff;
+    padding: 3px 6px 3px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
+#bodymobil
+{
+	background-color:#FFE4E1;
+}
+
+#tabellkolumner
+{
+	width: 40px;
+}
+
+#tabellfalt
+{
+	width: 50px;
+}
+
+
+
+
+.rollovericons a{
+  margin-bottom: 20px;
+  }

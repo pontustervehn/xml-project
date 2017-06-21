@@ -1,0 +1,11 @@
+<!ELEMENT recept (beskrivning?, ingrediens+, instruktion)>
+<!ATTLIST recept namn(#PCDATA) #REQUIRED 
+kategori(kakor|bullar|tårtor|bröd|knäck_och_kola|övrigt) #REQUIRED
+ tid(#PCDATA) #REQUIRED
+ specialkost(ingen|glutenfri|laktosfri|glutenfri_och_laktosfri) #REQUIRED>
+
+
+<!ELEMENT beskrivning (#PCDATA)
+<!ELEMENT ingrediens (#PCDATA)
+<!ATTLIST ingrediens namn(#PCDATA) #REQUIRED>
+<!ELEMENT instruktion (#PCDATA)

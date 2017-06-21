@@ -1,0 +1,430 @@
+lägg till:
+
+___________________________
+
+
+
+
+
+INSERT INTO `pontustv`.`recept` (
+`receptnamn` ,
+`beskrivning` ,
+`instruktion` ,
+`tidsåtgång`
+)
+VALUES (
+'Kanelbullar', 'Mammas goda kanelbullar. Passar perfekt till fikat.', '1. Lägg i ägg och socker i en skål. 2. Blanda i jästen. 3. Låt jäsa under duk i 20 minuter 4. Baka i ugnen på 225 grader i 20 minuter.', '45'
+), (
+'Bondkakor', 'Klassiska bondkakor.', '1. Blanda socker och smält margarin. 2. Häll i mjölen och blanda. 3. Dela upp degen i små bitar och lägg upp på plåt. 4. Grädda i ugnen på 180 grader i 15 min.', '25'
+);
+
+
+
+
+
+
+
+
+------------
+
+
+INSERT INTO `pontustv`.`recept` (`receptnamn`, `beskrivning`, `instruktion`, `tidsåtgång`) VALUES ('Kanelbullar', 'Mammas goda kanelbullar. Passar perfekt till fikat.', '1. Lägg i ägg och socker i en skål.
+2. Blanda i jästen.
+3. Låt jäsa under duk i 20 minuter
+4. Baka i ugnen på 225 grader i 20 minuter.', '45'), ('Bondkakor', 'Klassiska bondkakor.', '1. Blanda socker och smält margarin.
+2. Häll i mjölen och blanda.
+3. Dela upp degen i små bitar och lägg upp på plåt.
+4. Grädda i ugnen på 180 grader i 15 min.', '25');
+
+
+
+
+---------
+
+
+
+INSERT INTO `pontustv`.`ingrediens` (
+`receptnamn` ,
+`namn` ,
+`mattenhet` ,
+`mangd`
+)
+VALUES (
+'Kanelbullar', 'ägg', 'st', '3'
+), (
+'Kanelbullar', 'socker', 'dl', '5'
+), (
+'Kanelbullar', 'jäst', 'pkt', '1'
+), (
+'Bondkakor', 'socker', 'dl', '2'
+), (
+'Bondkakor', 'margarin', 'gram', '100'
+), (
+'Bondkakor', 'mjöl', 'dl', '2'
+);
+
+
+
+
+
+-------
+
+
+
+INSERT INTO `pontustv`.`ingrediens` (`receptnamn`, `namn`, `mattenhet`, `mangd`) VALUES ('Kanelbullar', 'ägg', 'st', '3'), ('Kanelbullar', 'socker', 'dl', '5'), ('Kanelbullar', 'jäst', 'pkt', '1'), ('Bondkakor', 'socker', 'dl', '2'), ('Bondkakor', 'margarin', 'gram', '100'), ('Bondkakor', 'mjöl', 'dl', '2');
+
+
+
+
+-----
+
+
+
+
+INSERT INTO `pontustv`.`kategori` (
+`namn` ,
+`receptnamn`
+)
+VALUES (
+'bullar', 'Kanelbullar'
+), (
+'kakor', 'Bondkakor'
+);
+
+
+
+------
+
+
+
+INSERT INTO `pontustv`.`kategori` (`namn`, `receptnamn`) VALUES ('bullar', 'Kanelbullar'), ('kakor', 'Bondkakor');
+
+
+
+
+-----
+
+
+
+INSERT INTO `pontustv`.`specialkost` (
+`receptnamn` ,
+`namn`
+)
+VALUES (
+'Kanelbullar', 'ingen'
+), (
+'Bondkakor', 'laktosfri'
+);
+
+
+
+-----
+
+INSERT INTO `pontustv`.`specialkost` (`receptnamn`, `namn`) VALUES ('Kanelbullar', 'ingen'), ('Bondkakor', 'laktosfri');
+
+
+
+-----
+
+
+
+
+
+
+modifiera:
+
+___________________________
+---------------------------
+
+UPDATE `pontustv`.`recept` SET `instruktion` = 'blanda allting och hoppas på det bästa. gör det nuuuuu.' WHERE `recept`.`receptnamn` = 'Apelsintårta';
+
+
+
+
+UPDATE `pontustv`.`recept` SET `receptnamn` = 'Apelsintårta' WHERE `recept`.`receptnamn` = 'Apelsintårtan';
+
+ändrade från tårtan till tårta
+
+
+
+
+------------
+
+UPDATE  `pontustv`.`recept` SET  `receptnamn` =  'Sockerkakan',
+`beskrivning` =  'En smarrig sockerkaka fÃ¶r sommardagen!',
+`instruktion` =  '1. Blanda socker, jÃ¤st, mjÃ¶l och vatten i en skÃ¥l.
+2. LÃ¥t jÃ¤sa under duk i 30 minuter.
+3. KnÃ¥da ut till en deg.
+4. TillsÃ¤tt vaniljsocker och kakao.
+5. HÃ¤ll ut i en form och grÃ¤dda i ugnen i 25 minuter.
+6. LÃ¥t svalna och servera!
+',
+`tidsatgang` =  '75' WHERE  `recept`.`receptid` =39;
+
+---------------------------------
+
+"UPDATE  `pontustv`.`ingrediens` SET  `ingrediensnamn` =  '$ingrediensnamn[$index]',
+`mattenhet` =  '$mattenhet[$index]',
+`mangd` =  '$mangd[$index]' WHERE  `ingrediens`.`receptid` =$recid AND  `ingrediens`.`ingrediensnamn` =  '$ingredienslista[$index]'";
+
+
+--------------------------------------------
+
+
+
+tag bort:
+-------------------------------
+
+
+DELETE FROM `pontustv`.`ingrediens` WHERE `ingrediens`.`receptid` = 33
+
+
+
+
+-----------------------------
+
+"DELETE FROM `pontustv`.`ingrediens` WHERE `ingrediens`.`receptid` = $recid AND `ingrediens`.`ingrediensnamn` = \'socker\`";
+
+
+
+----------------------------
+
+
+tag bort specialkost:
+DELETE FROM `pontustv`.`specialkost` WHERE `specialkost`.`receptnamn` = \'Apelsintårta\' AND `specialkost`.`namn` = \'glutenfri\'
+
+
+
+
+tag bort recept:
+
+
+_____________________
+
+
+DELETE FROM `pontustv`.`recept` WHERE receptnamn = 'Apelsintårta'
+
+
+<!--DELETE FROM `pontustv`.`recept` WHERE `recept`.`receptnamn` = \'Apelsintårta\'
+<!--DELETE FROM `ingrediens`,`kategori`,`specialkost` WHERE receptnamn='Apelsintårta'; 
+
+
+
+
+
+DELETE FROM `pontustv`.`recept` WHERE `recept`.`receptid` = 31;
+
+
+
+
+
+
+skapa fejkrecept.
+
+
+------------------------------------------------------------------
+
+
+
+INSERT INTO `pontustv`.`recept` (`receptnamn`, `beskrivning`, `instruktion`, `tidsåtgång`) VALUES ('Apelsintårta', 'Mammas goda apelsintårta. Passar perfekt till groggen.', 'blanda allting och hoppas på det bästa.gör det nu', '120');
+INSERT INTO `pontustv`.`ingrediens` (
+`receptnamn` ,
+`namn` ,
+`mattenhet` ,
+`mangd`
+)
+VALUES (
+'Apelsintårta', 'ägg', 'pkt', '5'
+);
+INSERT INTO `pontustv`.`kategori` (
+`namn` ,
+`receptnamn`
+)
+VALUES (
+'tårtor', 'Apelsintårta'
+);
+INSERT INTO `pontustv`.`specialkost` (
+`receptnamn` ,
+`namn`
+)
+VALUES (
+'Apelsintårta', 'glutenfri'
+);
+
+
+
+
+
+------
+
+
+skapa databasen:
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS `recept` (
+  `receptid` int(11) NOT NULL AUTO_INCREMENT,
+  `receptnamn` varchar(255) NOT NULL,
+  `beskrivning` longtext NOT NULL,
+  `instruktion` longtext NOT NULL,
+  `tidsatgang` int(11) NOT NULL,
+  PRIMARY KEY  (`receptid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+--
+--
+
+Dumping data for table `recept`
+--
+
+INSERT INTO `recept` (`receptnamn`, `beskrivning`, `instruktion`, `tidsatgang`) VALUES
+('Apelsintårta', 'Mammas goda apelsintårta. Passar perfekt till groggen.', 'blanda allting och hoppas på det bästa.gör det nu', 120),
+('Bondkakor', 'Klassiska bondkakor.', '1. Blanda socker och smält margarin.\r\n2. Häll i mjölen och blanda.\r\n3. Dela upp degen i små bitar och lägg upp på plåt.\r\n4. Grädda i ugnen på 180 grader i 15 min.', 25),
+('Kanelbullar', 'Mammas goda kanelbullar. Passar perfekt till fikat.', '1. Lägg i ägg och socker i en skål.\r\n2. Blanda i jästen.\r\n3. Låt jäsa under duk i 20 minuter\r\n4. Baka i ugnen på 225 grader i 20 minuter.', 45);
+
+
+
+
+
+
+---------
+
+
+
+
+CREATE TABLE IF NOT EXISTS `ingrediens` (
+  `receptid` int(11) NOT NULL AUTO_INCREMENT,
+  `namn` varchar(255) NOT NULL,
+  `mattenhet` varchar(255) NOT NULL,
+  `mangd` varchar(255) NOT NULL,
+  PRIMARY KEY  (`receptid`,`namn`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `ingrediens` (`receptid`, `namn`, `mattenhet`, `mangd`) VALUES
+('1', 'ägg', 'pkt', '5'),
+('2', 'margarin', 'gram', '100'),
+('2', 'mjöl', 'dl', '2'),
+('2', 'socker', 'dl', '2'),
+('3', 'jäst', 'pkt', '1'),
+('3', 'socker', 'dl', '5'),
+('3', 'ägg', 'st', '3');
+
+
+ALTER TABLE `ingrediens`
+  ADD CONSTRAINT `ingrediens_ibfk_2` FOREIGN KEY (`receptid`) REFERENCES `recept` (`receptid`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
+
+------
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS `specialkost` (
+  `receptid` int(11) NOT NULL AUTO_INCREMENT,
+  `namn` varchar(255) NOT NULL,
+  PRIMARY KEY  (`receptid`,`namn`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `specialkost` (`receptnamn`, `namn`) VALUES
+('Apelsintårta', 'glutenfri'),
+('Bondkakor', 'laktosfri'),
+('Kanelbullar', 'ingen');
+
+
+ALTER TABLE `specialkost`
+  ADD CONSTRAINT `specialkost_ibfk_3` FOREIGN KEY (`receptid`) REFERENCES `recept` (`receptid`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
+
+----
+
+
+--
+
+CREATE TABLE IF NOT EXISTS `kategori` (
+  `receptid` int(11) NOT NULL AUTO_INCREMENT,
+  `namn` varchar(255) NOT NULL,
+  PRIMARY KEY  (`namn`,`receptid`),
+  KEY `receptnamn` (`receptnamn`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+INSERT INTO `kategori` (`namn`) VALUES
+('tårtor', 'Apelsintårta'),
+('kakor', 'Bondkakor'),
+('bullar', 'Kanelbullar');
+
+
+ALTER TABLE `kategori`
+  ADD CONSTRAINT `kategori_ibfk_3` FOREIGN KEY (`receptid`) REFERENCES `recept` (`receptid`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----
+
+
+UPDATE  `pontustv`.`specialkost` SET  `specialkostnamn` =  'laktosfri' WHERE  `specialkost`.`receptid` =39 AND  `specialkost`.`specialkostnamn` =  'ingen'
+
+
+
+---
+
+
+
+
+
+
+	
+	
+	$query = "SELECT  *
+	FROM  recept
+	LEFT JOIN kategori USING (receptid)
+	LEFT JOIN specialkost USING (receptid)
+	LEFT JOIN ingrediens USING (receptid)
+	WHERE receptid=$recid";
+	
+	if (($result = mysqli_query($link, $query)) === false) {
+       printf("Query failed: %s<br />\n%s", $query, mysqli_error($link));
+       exit();
+    }
+	
+	 while ($line = $result->fetch_object()) {
+		$ingredienslista[] = $line->ingrediensnamn;
+    }
+	
+	foreach($ingredienslista as $index2 => $value) {
+	$returnstring .= "<tr>
+	<td><input type=\"text\" name=\"ingrediensnamn[]\" value=\"$ingredienslista[$index]\"></td>
+	<td><input type=\"text\" name=\"mangd[]\" value=\"$mangdlista[$index]\"></td>
+	<td><input type=\"text\" name=\"mattenhet[]\" value=\"$mattenhetlista[$index]\"></td>
+	</tr>";	
+	 }
+	
+
+
+
+
+
+----
