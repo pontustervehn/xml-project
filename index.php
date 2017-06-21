@@ -9,11 +9,11 @@
 <body>
 
 <h1>Bakverksboken<h1>
- <form><input type="button" value="Receptlista" onClick="window.location.href='http://xml.csc.kth.se/~pontustv/DM2517/project/receptlista.php'"></form>
- <form><input type="button" value="Sök recept" onClick="window.location.href='http://xml.csc.kth.se/~pontustv/DM2517/project/sok.php'"></form>
- <form><input type="button" value="Lägg till nytt recept" onClick="window.location.href='http://xml.csc.kth.se/~pontustv/DM2517/project/logga_in.php'"></form>
+ <form><input type="button" value="Receptlista" onClick="location.href='receptlista.php'"></form>
+ <form><input type="button" value="Sök recept" onClick="location.href='sok.php'"></form>
+ <form><input type="button" value="Lägg till nytt recept" onClick="location.href='logga_in.php'"></form>
 
- <img src="cupcake.png" width="150" height="150"/>
+ <img src="cupcake.jpg" width="150" height="150"/>
 
 
 
